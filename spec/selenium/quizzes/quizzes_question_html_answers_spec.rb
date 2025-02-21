@@ -34,6 +34,8 @@ describe "quizzes question with html answers" do
     click_option(".question_form:visible .question_type", question_type) if question_type
     driver.execute_script "$('.answer').addClass('hover');"
     fj(".edit_html:visible").click
+    driver.execute_script("$('.edit_html:visible')[0].scrollIntoView({ behavior: 'smooth', block: 'center' });") # @amit: added this line
+    sleep 0.3 # @amit: added this line
   end
 
   def close_first_html_answer
